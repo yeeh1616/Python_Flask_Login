@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+/* Style table headers and table data */
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+/* Zebra-striped table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Responsive "Side-by-side" Tables</h2>
+<p>How to create side-by-side images with the CSS float property. On screens that are 600px wide or less, the images will stack on top of each other instead of next to each other.</p>
+
+<p>Resize the browser window to see the effect.</p>
+
+<div class="row">
+  <div class="column">
+    <div class="column">
+    <p>Summary</p>
+    <textarea id="w3review" name="w3review" rows="20" cols="120">
+      Summary example.......
+    </textarea>
+    </div>
+  </div>
+  <div class="column">
+    <p>Policy Id, date ...</p>
+    <textarea id="w3review" name="w3review" rows="20" cols="120">
+      Policy example.......
+    </textarea>
+  </div>
+</div>
+<div class="row">
+  <div class="column2">
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <table>
+      <tr>
+        <th style="width:50%">Features</th>
+        <th>Basic</th>
+        <th>Pro</th>
+      </tr>
+      <tr>
+        <td>Sample text</td>
+        <td><i class="fa fa-remove"></i></td>
+        <td><i class="fa fa-check"></i></td>
+      </tr>
+      <tr>
+        <td>Sample text</td>
+        <td><i class="fa fa-check"></i></td>
+        <td><i class="fa fa-check"></i></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
