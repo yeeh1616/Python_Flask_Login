@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<script>
+    function myFunction(qid) {
+        if (qid == 1){
+            document.getElementById("summary").innerHTML = "March 6, Afghanistan \"<span style=\"background-color: #FFFF00\">Measures have been taken into account to dispel disinformation and superstitions around COVID-19</span>, Mr Mayar spokesperson for the Ministry of Public Health said that a cross-sectoral coordination committee has been formed under the chairmanship of the Minister of Public Health and with the participation of the Ministries of Hajj and Endowments and Ministries of Foreign Affairs and Interior. The Ministry of Hajj and Endowments will inform the public about coronavirus at friday prayers to dispel religious superstitions about coronavirus.";
+        } else if (qid == 2){
+            document.getElementById("summary").innerHTML = "March 6, Afghanistan \"Measures have been taken into account to dispel disinformation and superstitions around COVID-19, <span style=\"background-color: #FFFF00\">Mr Mayar spokesperson for the Ministry of Public Health said that a cross-sectoral coordination committee has been formed under the chairmanship of the Minister of Public Health and with the participation of the Ministries of Hajj and Endowments and Ministries of Foreign Affairs and Interior</span>. The Ministry of Hajj and Endowments will inform the public about coronavirus at friday prayers to dispel religious superstitions about coronavirus.";
+        } else if (qid == 3){
+            document.getElementById("summary").innerHTML = "March 6, Afghanistan \"Measures have been taken into account to dispel disinformation and superstitions around COVID-19, Mr Mayar spokesperson for the Ministry of Public Health said that a cross-sectoral coordination committee has been formed under the chairmanship of the Minister of Public Health and with the participation of the Ministries of Hajj and Endowments and Ministries of Foreign Affairs and Interior. <span style=\"background-color: #FFFF00\">The Ministry of Hajj and Endowments will inform the public about coronavirus at friday prayers to dispel religious superstitions about coronavirus</span>.";
+        } else if (qid == 4){
+            document.getElementById("summary").innerHTML = "March 6, <span style=\"background-color: #FFFF00\">Afghanistan</span> \"Measures have been taken into account to dispel disinformation and superstitions around COVID-19, Mr Mayar spokesperson for the Ministry of Public Health said that a cross-sectoral coordination committee has been formed under the chairmanship of the Minister of Public Health and with the participation of the Ministries of Hajj and Endowments and Ministries of Foreign Affairs and Interior. The Ministry of Hajj and Endowments will inform the public about coronavirus at friday prayers to dispel religious superstitions about coronavirus.";
+        }
+    }
+</script>
+
 <style>
 * {
   box-sizing: border-box;
@@ -42,7 +57,6 @@ tr:nth-child(even) {
 
 
 
-
 /* Style the table */
 table {
   border-collapse: collapse;
@@ -75,10 +89,19 @@ tr:nth-child(even) {
 }
 
 div.ex1 {
+    font-size: 18px;
   background-color: white;
-  height: 400px;
+  height: 600px;
   width: 900px;
   overflow-y: scroll;
+}
+
+div.ex2 {
+    font-size: 30px;
+    background-color: white;
+    height: 600px;
+    width: 900px;
+    overflow-y: scroll;
 }
 
 
@@ -89,6 +112,19 @@ div.ex1 {
     width: 100%;
   }
 }
+</style>
+
+<style>
+.label {
+  color: white;
+  padding: 2px;
+  font-family: Arial;
+}
+.success {background-color: #04AA6D;} /* Green */
+.info {background-color: #2196F3;} /* Blue */
+.warning {background-color: #ff9800;} /* Orange */
+.danger {background-color: #f44336;} /* Red */
+.other {background-color: #e7e7e7; color: black;} /* Gray */
 </style>
 </head>
 <body>
@@ -103,38 +139,40 @@ div.ex1 {
     <div class="column">
         <h1>Annotation tasks</h1>
         <div class="ex1">
-            <form action="/action_page.php">
+            <form action="javascript:void(0);">
                 <h2>Entry type</h2>
                 <p>Information as to where in the policy history of a given policy a record is situated.</p>
                 <input type="radio" id="html" name="fav_language" value="HTML">
                 <label for="html">New Entry: The record is the first instance of a policy being made on a given
 date for the following combination of dimensions: the policy initiator, policy type,
-policy sub type, geographic target, demographic target.</label><br><br>
+policy sub type, geographic target, demographic target.</label>
+                <br><span class="label success">0.8 [AI Recommendation]</span><br><br>
                 <input type="radio" id="css" name="fav_language" value="CSS">
                 <label for="css">Update: The record is an update to a new entry insofar as some dimension of
 the record changes *other* than the following dimensions: the policy initiator,
 policy type, policy sub type, geographic target, demographic target.
 </label><br>
                 <input type="submit" value="Save">
-                <input type="submit" value="Highlighting">
+                <button onclick="myFunction(1)">Highlighting</button>
 
-                <br>
+                <br><br><br>
 
                 <h2>Update type</h2>
                 <p>If the entry type is an "Update", then this variable records more information as the nature
 of the update.</p>
                 <input type="radio" id="age1" name="age" value="30">
                 <label for="age1">Change of Policy: A dimension other than the policy initiator, policy type, policy
-sub type, geographic target, demographic target has changed</label><br><br>
+sub type, geographic target, demographic target has changed</label>
+                <br><span class="label warning">0.5 [AI Recommendation]</span><br><br>
                 <input type="radio" id="age2" name="age" value="60">
                 <label for="age2">End of Policy: Either the policy has been cancelled/terminated or one of the
 following dimensions has changed: the policy initiator, policy type, policy sub
 type, geographic target, demographic target.
 </label><br>
                 <input type="submit" value="Save">
-                <input type="submit" value="Highlighting">
+                <button onclick="myFunction(2)">Highlighting</button>
 
-                <br>
+                <br><br><br>
 
                 <h2>Update Level</h2>
                 <p>If the entry type is an "Update", then this variable records more information as to the
@@ -147,44 +185,29 @@ magnitude of the update.</p>
                 <label for="age2">Strengthening and Relaxing: A policy strengthens in terms of its conditions,
 coverage, or compliance, or duration for some dimensions and relaxes on other
 dimensions.
-</label><br><br>
+</label>
+                <br><span class="label danger">0.2 [AI Recommendation]</span><br><br>
                 <input type="submit" value="Save">
-                <input type="submit" value="Highlighting">
+                <button onclick="myFunction(3)">Highlighting</button>
+
+                <br><br><br>
+
+                <h2>Country</h2>
+                <p>From what country does this policy originate from?</p>
+                <textarea>Afghanistan</textarea>
+                <br><br>
+                <input type="submit" value="Save">
+                <button onclick="myFunction(4)">Highlighting</button>
             </form>
         </div>
     </div>
   </div>
   <div class="column">
     <h1>Policy Id: 2975738</h1>
-    <div class="ex1">
-        <span style="background-color: #FFFF00">March 6</span>, Afghanistan "Measures have been taken into account to dispel disinformation and superstitions around COVID-19, Mr Mayar spokesperson for the Ministry of Public Health said that a cross-sectoral coordination committee has been formed under the chairmanship of the Minister of Public Health and with the participation of the Ministries of Hajj and Endowments and Ministries of Foreign Affairs and Interior. The Ministry of Hajj and Endowments will inform the public about coronavirus at friday prayers to dispel religious superstitions about coronavirus"
+    <div class="ex2" id="summary">
+        March 6, Afghanistan "Measures have been taken into account to dispel disinformation and superstitions around COVID-19, Mr Mayar spokesperson for the Ministry of Public Health said that a cross-sectoral coordination committee has been formed under the chairmanship of the Minister of Public Health and with the participation of the Ministries of Hajj and Endowments and Ministries of Foreign Affairs and Interior. The Ministry of Hajj and Endowments will inform the public about coronavirus at friday prayers to dispel religious superstitions about coronavirus."
     </div>
   </div>
 </div>
-<div class="row">
-  <div class="column2">
-    <!-- Font Awesome Icon Library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
-    <table>
-      <tr>
-        <th style="width:50%">Policy Id</th>
-        <th>Process</th>
-        <th>Action</th>
-      </tr>
-      <tr>
-        <td>2975738</td>
-        <td><i class="fa fa-remove"></i></td>
-        <td><input type="submit" value="Edit"></td>
-      </tr>
-      <tr>
-        <td>7024226</td>
-        <td><i class="fa fa-check"></i></td>
-        <td><input type="submit" value="Edit"></td>
-      </tr>
-    </table>
-  </div>
-</div>
-
 </body>
 </html>
