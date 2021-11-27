@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  margin-left:-5px;
+  margin-right:-5px;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+th, td {
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+
+
+
+/* Style the table */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+}
+
+/* Style table headers and table data */
+th, td {
+  text-align: center;
+  padding: 16px;
+}
+
+th:first-child, td:first-child {
+  text-align: left;
+}
+
+/* Zebra-striped table rows */
+tr:nth-child(even) {
+  background-color: #f2f2f2
+}
+
+.fa-check {
+  color: green;
+}
+
+.fa-remove {
+  color: red;
+}
+
+div.ex1 {
+  background-color: white;
+  height: 400px;
+  width: 900px;
+  overflow-y: scroll;
+}
+
+
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other on screens that are smaller than 600 px */
+@media screen and (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+</style>
+</head>
+<body>
+
+<h2>Responsive "Side-by-side" Tables</h2>
+<p>How to create side-by-side images with the CSS float property. On screens that are 600px wide or less, the images will stack on top of each other instead of next to each other.</p>
+
+<p>Resize the browser window to see the effect.</p>
+
+<div class="row">
+  <div class="column">
+    <div class="column">
+        <h1>Annotation tasks</h1>
+        <div class="ex1">
+            <form action="/action_page.php">
+                <h2>Entry type</h2>
+                <p>Information as to where in the policy history of a given policy a record is situated.</p>
+                <input type="radio" id="html" name="fav_language" value="HTML">
+                <label for="html">New Entry: The record is the first instance of a policy being made on a given
+date for the following combination of dimensions: the policy initiator, policy type,
+policy sub type, geographic target, demographic target.</label><br><br>
+                <input type="radio" id="css" name="fav_language" value="CSS">
+                <label for="css">Update: The record is an update to a new entry insofar as some dimension of
+the record changes *other* than the following dimensions: the policy initiator,
+policy type, policy sub type, geographic target, demographic target.
+</label><br>
+                <input type="submit" value="Save">
+                <input type="submit" value="Highlighting">
+
+                <br>
+
+                <h2>Update type</h2>
+                <p>If the entry type is an "Update", then this variable records more information as the nature
+of the update.</p>
+                <input type="radio" id="age1" name="age" value="30">
+                <label for="age1">Change of Policy: A dimension other than the policy initiator, policy type, policy
+sub type, geographic target, demographic target has changed</label><br><br>
+                <input type="radio" id="age2" name="age" value="60">
+                <label for="age2">End of Policy: Either the policy has been cancelled/terminated or one of the
+following dimensions has changed: the policy initiator, policy type, policy sub
+type, geographic target, demographic target.
+</label><br>
+                <input type="submit" value="Save">
+                <input type="submit" value="Highlighting">
+
+                <br>
+
+                <h2>Update Level</h2>
+                <p>If the entry type is an "Update", then this variable records more information as to the
+magnitude of the update.</p>
+                <input type="radio" id="age1" name="age2" value="30">
+                <label for="age1">Strengthening: A policy strengthens in terms of its conditions, coverage, or compliance, or duration</label><br><br>
+                <input type="radio" id="age2" name="age2" value="60">
+                <label for="age2">Relaxing: A policy relaxes in terms of its conditions, coverage, or compliance, or duration</label><br><br>
+                <input type="radio" id="age2" name="age2" value="60">
+                <label for="age2">Strengthening and Relaxing: A policy strengthens in terms of its conditions,
+coverage, or compliance, or duration for some dimensions and relaxes on other
+dimensions.
+</label><br><br>
+                <input type="submit" value="Save">
+                <input type="submit" value="Highlighting">
+            </form>
+        </div>
+    </div>
+  </div>
+  <div class="column">
+    <h1>Policy Id: 2975738</h1>
+    <div class="ex1">
+        <span style="background-color: #FFFF00">March 6</span>, Afghanistan "Measures have been taken into account to dispel disinformation and superstitions around COVID-19, Mr Mayar spokesperson for the Ministry of Public Health said that a cross-sectoral coordination committee has been formed under the chairmanship of the Minister of Public Health and with the participation of the Ministries of Hajj and Endowments and Ministries of Foreign Affairs and Interior. The Ministry of Hajj and Endowments will inform the public about coronavirus at friday prayers to dispel religious superstitions about coronavirus"
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="column2">
+    <!-- Font Awesome Icon Library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <table>
+      <tr>
+        <th style="width:50%">Policy Id</th>
+        <th>Process</th>
+        <th>Action</th>
+      </tr>
+      <tr>
+        <td>2975738</td>
+        <td><i class="fa fa-remove"></i></td>
+        <td><input type="submit" value="Edit"></td>
+      </tr>
+      <tr>
+        <td>7024226</td>
+        <td><i class="fa fa-check"></i></td>
+        <td><input type="submit" value="Edit"></td>
+      </tr>
+    </table>
+  </div>
+</div>
+
+</body>
+</html>
